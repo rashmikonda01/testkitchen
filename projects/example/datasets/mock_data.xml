@@ -1,5 +1,5 @@
 <dataset>
-	<users
+	<source_example_users
 		USER_ID="1"
 		USER_NAME="larry"
 		FIRST_NAME="Larry"
@@ -7,7 +7,7 @@
 		DISPLAY_NAME="Larry Fine"
 		EMAIL="larry@stooge.com"
 	/>
-	<users
+	<source_example_users
 		USER_ID="2"
 		USER_NAME="curly"
 		FIRST_NAME="Curly"
@@ -15,7 +15,7 @@
 		DISPLAY_NAME="Curly Howard"
 		EMAIL="curly@stooge.com"
 	/>
-	<users
+	<source_example_users
 		USER_ID="3"
 		USER_NAME="moe"
 		FIRST_NAME="Moe"
