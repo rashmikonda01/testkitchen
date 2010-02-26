@@ -66,7 +66,7 @@ public class ExampleTest extends KitchenTestCase  {
 	@BeforeClass 
 	public static void initialize() throws Exception
     {
-		String[] jndi_names = {"Staging", "Warehouse"};
+		String[] jndi_names = {"Source", "Warehouse"};
 		openConnections(jndi_names);
    
     	// Load Mock Data into Source DB
