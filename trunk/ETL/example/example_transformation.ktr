@@ -116,7 +116,7 @@
            <schema_name/>
            </partitioning>
     <connection>Source</connection>
-    <sql>SELECT * FROM users</sql>
+    <sql>SELECT * FROM source_example_users</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
