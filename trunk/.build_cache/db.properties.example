@@ -1,9 +1,9 @@
 db.test.type=mysql
 db.test.driver=com.mysql.jdbc.Driver
-db.test.url=jdbc:mysql://127.0.0.1:3306/warehouse_test
+db.test.url=jdbc:mysql://127.0.0.1:3306/example_test
 db.development.type=mysql
 db.development.driver=com.mysql.jdbc.Driver
-db.development.url=jdbc:mysql://127.0.0.1:3306/warehouse_development
+db.development.url=jdbc:mysql://127.0.0.1:3306/example_development
 db.production.type=mysql
 db.production.driver=com.mysql.jdbc.Driver
-db.production.url=jdbc:mysql://127.0.0.1:3306/warehouse_production
+db.production.url=jdbc:mysql://127.0.0.1:3306/example_production
