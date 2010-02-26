@@ -78,6 +78,7 @@ public class ExampleTest extends KitchenTestCase  {
     	DatabaseOperation.CLEAN_INSERT.execute(connections.get("Warehouse"), dimensionsDataset);
            
     	runJob("ETL/example/example_dimension_update.kjb");
+    	// or you could runTransformation(location) 
     }
 	
     @Test 
