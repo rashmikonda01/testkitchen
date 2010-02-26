@@ -87,7 +87,7 @@ public class ExampleTest extends KitchenTestCase  {
     	
     	ITable expected = goldenDataSet.getTable("dim_example_users");
     	
-    	String actualQuery="SELECT * FROM dim_example_users WHERE user_id <> 1 ORDER BY user_id, version";
+    	String actualQuery="SELECT * FROM dim_example_users WHERE user_id <> 0 ORDER BY user_id, version";
     	ITable actual = connections.get("Warehouse").createQueryTable("actual",actualQuery); 
     	ITable filteredActual = DefaultColumnFilter.includedColumnsTable(actual, expected.getTableMetaData().getColumns());
         
