@@ -1,0 +1,21 @@
+<project default="jar" xmlns:ivy="antlib:org.apache.ivy.ant">
+	<import file="common_build.xml"/>
+
+	<target name="init" depends="ivy.resolve">
+		<ivy:cachepath pathid="classpath.compile" conf="compile" />	
+	</target>
+	
+	<target name="default" depends="init"/>
+
+    <target name="compile" depends="default">
+        <mkdir dir="build/classes"/>
+        <javac srcdir="src" destdir="build/classes">
+        	<classpath refid="classpath.compile"/>
+    	</javac>
+    </target>
+	
+    <target name="jar" depends="compile">
+        <jar destfile="../lib/testkitchen-LATEST.jar" basedir="build/classes"/>
+    </target>
+	
+</project>
