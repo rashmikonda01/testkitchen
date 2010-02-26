@@ -45,6 +45,8 @@
 		<!-- DATABASE DEPENDENCIES -->
 		<dependency org="mysql" name="mysql-connector-java" rev="5.0.7" conf="db->default" transitive="false"/> 
 		<dependency org="hsqldb" name="hsqldb" rev="1.8.0.7" conf="db->default"/>
+		<dependency org="postgresql" name="postgresql" rev="8.4-701.jdbc3"  conf="db->default"/>
+		<dependency org="oracle" name="ojdbc" rev="10.2.0.3.0"  conf="db->default"/>
 		
 		<!--  DBDEPLOY -->
 		<dependency org="dbdeploy" name="dbdeploy-ant" rev="3.0M2" conf="dbdeploy->default"/>
