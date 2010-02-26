@@ -69,9 +69,9 @@ public class ExampleTest extends KitchenTestCase  {
 		String[] jndi_names = {"Staging", "Warehouse"};
 		openConnections(jndi_names);
    
-    	// Load Mock Data into Staging DB
-    	IDataSet ocpDataset = new FlatXmlDataSetBuilder().build(new FileInputStream("projects/example/datasets/mock_data.xml"));
-    	DatabaseOperation.CLEAN_INSERT.execute(connections.get("Staging"), ocpDataset);    	
+    	// Load Mock Data into Source DB
+    	IDataSet sourceDataset = new FlatXmlDataSetBuilder().build(new FileInputStream("projects/example/datasets/mock_data.xml"));
+    	DatabaseOperation.CLEAN_INSERT.execute(connections.get("Source"), sourceDataset);    	
     	
     	// Load Mock Existing Data into Warehouse
     	IDataSet dimensionsDataset = new FlatXmlDataSetBuilder().build(new FileInputStream("projects/example/datasets/base_data.xml"));
@@ -87,7 +87,7 @@ public class ExampleTest extends KitchenTestCase  {
     	
     	ITable expected = goldenDataSet.getTable("dim_example_users");
     	
-    	String actualQuery="SELECT * FROM dim_example_users WHERE user_id is not null ORDER BY user_id, version";
+    	String actualQuery="SELECT * FROM dim_example_users WHERE user_id <> 1 ORDER BY user_id, version";
     	ITable actual = connections.get("Warehouse").createQueryTable("actual",actualQuery); 
     	ITable filteredActual = DefaultColumnFilter.includedColumnsTable(actual, expected.getTableMetaData().getColumns());
         
