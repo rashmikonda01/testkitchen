@@ -1,4 +1,5 @@
 <dataset>
+<!-- THIS DATASET MUST BE SORTED BY USER_ID AND VERSION -->
 <!-- Last name changes should trigger a new record -->
 	<dim_example_users
 		USER_ID="1"
@@ -17,7 +18,7 @@
 		LAST_NAME="Fine"
 		DISPLAY_NAME="Larry Fine"
 		EMAIL="larry@stooge.com"
-    	VERSION="1"
+    	VERSION="2"
     	CURRENT="Y"				
 	/>
 <!-- Email address changes should update and not insert -->	

@@ -6,7 +6,6 @@ CREATE TABLE `dim_example_users` (
   `last_name` varchar(255) DEFAULT NULL,
   `display_name` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
-  `active` char(1) DEFAULT NULL,
   `date_from` datetime DEFAULT NULL,
   `date_to` datetime DEFAULT NULL,
   `version` int(11) DEFAULT NULL,
