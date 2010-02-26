@@ -5,6 +5,5 @@ CREATE TABLE `source_example_users` (
   `last_name` varchar(255) DEFAULT NULL,
   `display_name` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
-  `active` char(1) DEFAULT NULL
   PRIMARY KEY (`user_id`)
 )
