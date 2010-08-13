@@ -8,6 +8,9 @@
   <include url="${ivy.default.settings.dir}/ivysettings-public.xml"/>
   <resolvers>
   	<chain name="shared">
+		<filesystem name="local" local="true">
+		  <artifact pattern="${ivy.project.dir}/lib/[module]-[revision].jar"/>
+		</filesystem>  	
 		<url name="shared-ivy" m2compatible="true">
 		  <ivy pattern="http://repo.pentaho.org/artifactory/pentaho/[organisation]/[module]/[revision]/[module]-[revision].ivy.xml" />
 		  <artifact pattern="http://repo.pentaho.org/artifactory/pentaho/[organisation]/[module]/[revision]/[module]-[revision].jar" />
