@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ivy-module version="1.0">    
-	<info organisation="${ivy.artifact.group}" module="${ivy.module}" revision="${project.revision}" />
+	<info organisation="${ivy.artifact.group}" module="TestKitchen" revision="${project.revision}" />
 	<configurations>  
 		<conf name="local" visibility="private" />  
 		<conf name="compile"  />
@@ -12,10 +12,6 @@
 		<conf name="dbdeploy" extends="db"/>
 		<conf name="default" extends="master, runtime" />  
 	</configurations>  
-	<publications>
-    	<artifact name="testkitchen" type="jar" ext="jar" conf="default"/>
-    	<!--<artifact name="testkitchen-distrib" type="jar" ext="jar" conf="client"/>-->
-	</publications>
 	<dependencies>
 		<!-- COMPILE DEPENDENCIES -->    
 	   <dependency org="commons-logging" name="commons-logging" rev="1.1.1" conf="compile->default"/>
@@ -30,8 +26,16 @@
 	   <dependency org="org.dbunit" name="dbunit" rev="2.4.7" conf="compile->default;runtime->default" transitive="false"/>
 
 		<!-- KETTLE DEPENDENCIES -->
-		<dependency org="pentaho.kettle" name="kettle-core" rev="4.0.0-GA" conf="compile->default;runtime->default"/>
-		<dependency org="pentaho.kettle" name="kettle-engine" rev="4.0.0-GA" conf="compile->default;runtime->default"/>
+		<dependency org="pentaho.kettle" name="kettle-core" rev="3.2.0" conf="compile->default;runtime->default"/>
+		<dependency org="pentaho.kettle" name="kettle-engine" rev="3.2.0" conf="compile->default;runtime->default"/>
+		<dependency org="pentaho.kettle" name="kettle-db" rev="3.2.0" conf="runtime->default"/>	   
+		<dependency org="pentaho-library" name="libbase" rev="TRUNK-SNAPSHOT" conf="runtime->default" />
+		<dependency org="pentaho-library" name="libformula" rev="TRUNK-SNAPSHOT" conf="runtime->default"/>
+	    <dependency org="commons-collections" name="commons-collections" rev="3.2" conf="runtime->default"/>
+		<dependency org="org.springframework" name="spring"              rev="2.5.6"   transitive="false"  conf="runtime->default"/>
+		<dependency org="janino"                   name="janino"        rev="2.5.x"                         conf="runtime->default" transitive="false"/>
+		<dependency org="javax.mail" name="mail" rev="1.4" conf="runtime->default" />
+		<dependency org="rhino" name="js" rev="1.7R1" conf="runtime->default"/>
 
 	   <!-- RUNTIME DEPENDENCIES -->
 	   <dependency org="simple-jndi" name="simple-jndi" rev="0.11.4.1" conf="runtime->default" transitive="false"/> 
@@ -41,8 +45,12 @@
 		<!-- DATABASE DEPENDENCIES -->
 		<dependency org="mysql" name="mysql-connector-java" rev="5.0.7" conf="db->default" transitive="false"/> 
 		<dependency org="hsqldb" name="hsqldb" rev="1.8.0.7" conf="db->default"/>
+		<dependency org="postgresql" name="postgresql" rev="8.4-701.jdbc3"  conf="db->default"/>
+		
 		<!--  DBDEPLOY -->
 		<dependency org="dbdeploy" name="dbdeploy-ant" rev="3.0M2" conf="dbdeploy->default"/>
 
+		<!--  TESTKITCHEN -->
+		<dependency org="testkitchen" name="testkitchen" rev="LATEST" conf="compile->default"/>
 	</dependencies>    
 </ivy-module>
