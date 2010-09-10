@@ -21,7 +21,8 @@
         <echo message="building testkitchen-dist jar"/>
     	<copy file="${apifile}" todir="dist/lib"/> 	
         <jar jarfile="${distfile}" basedir="dist"/>	
-		<copy file="${apifile}" todir="dist/lib"/> 	
+		<copy file="${apifile}" todir="dist/lib"/>
+    	<delete file="dist/lib/${ivy.module}-${project.revision}.jar" />
 	</target>
 	
 </project>

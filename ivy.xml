@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ivy-module version="1.0">    
-	<info organisation="${ivy.artifact.group}" module="${ivy.module}" revision="${project.revision}" />
+	<info organisation="org.dankinsley" module="${ivy.module}" revision="${project.revision}" />
 	<configurations>  
 		<conf name="local" visibility="private" />  
 		<conf name="compile"  />
