@@ -9,6 +9,19 @@
 
     <target name="compile" depends="compile-default"/>
 	
-    <target name="jar" depends="compile,jar-default"/>
+    <target name="jar" depends="dist-clean,compile">
+        <mkdir dir="${target.dir}"/>
+        <mkdir dir="${jar.metainf.dir}"/>
+
+        <property name="apifile" value="${target.dir}/${ivy.module}-${project.revision}.jar"/>
+        <echo message="building testkitchen jar"/>
+        <jar jarfile="${apifile}" basedir="${build.dir}" excludes="resources/**"/>	    	
+
+        <property name="distfile" value="${target.dir}/${ivy.module}-dist-${project.revision}.jar"/>
+        <echo message="building testkitchen-dist jar"/>
+    	<copy file="${apifile}" todir="dist/lib"/> 	
+        <jar jarfile="${distfile}" basedir="dist"/>	
+		<copy file="${apifile}" todir="dist/lib"/> 	
+	</target>
 	
 </project>
