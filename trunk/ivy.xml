@@ -14,7 +14,7 @@
 	</configurations>  
 	<publications>
     	<artifact name="testkitchen" type="jar" ext="jar" conf="default"/>
-    	<!--<artifact name="testkitchen-distrib" type="jar" ext="jar" conf="client"/>-->
+    	<artifact name="testkitchen-dist" type="jar" ext="jar" conf="default"/>
 	</publications>
 	<dependencies>
 		<!-- COMPILE DEPENDENCIES -->    
