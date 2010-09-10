@@ -1,9 +1,0 @@
-# This is the username and password used to connect to the database -> these can be overriden in the project file
-# After you change the password, copy the file to "db.properties"
-# This username and password will be used for each project, however it can be overriden in the project db.properties file
-db.test.user=root
-db.test.password=CHANGEME
-db.development.user=root
-db.development.password=CHANGEME
-db.production.user=root
-db.production.password=CHANGEME
