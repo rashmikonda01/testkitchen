@@ -1,0 +1,26 @@
+<dataset>
+	<source_example_users
+		USER_ID="1"
+		USER_NAME="larry"
+		FIRST_NAME="Larry"
+		LAST_NAME="Fine"
+		DISPLAY_NAME="Larry Fine"
+		EMAIL="larry@stooge.com"
+	/>
+	<source_example_users
+		USER_ID="2"
+		USER_NAME="curly"
+		FIRST_NAME="Curly"
+		LAST_NAME="Howard"
+		DISPLAY_NAME="Curly Howard"
+		EMAIL="curly@stooge.com"
+	/>
+	<source_example_users
+		USER_ID="3"
+		USER_NAME="moe"
+		FIRST_NAME="Moe"
+		LAST_NAME="Szyslak"
+		DISPLAY_NAME="Joe Test"
+		EMAIL="moe@stooge.com"
+	/>
+</dataset>
