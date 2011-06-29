@@ -9,18 +9,14 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
-import junit.framework.TestCase;
-
 import org.dbunit.DatabaseUnitException;
 import org.dbunit.database.DatabaseConnection;
+import org.dbunit.ext.mysql.MySqlConnection;
 import org.dbunit.database.IDatabaseConnection;
-import org.junit.AfterClass;
 
 import org.pentaho.di.core.KettleEnvironment;
 import org.pentaho.di.core.exception.KettleException;
 import org.pentaho.di.core.exception.KettleXMLException;
-import org.pentaho.di.core.logging.LogWriter;
-import org.pentaho.di.core.util.EnvUtil;
 import org.pentaho.di.job.Job;
 import org.pentaho.di.job.JobMeta;
 import org.pentaho.di.trans.Trans;
@@ -40,6 +36,29 @@ public abstract class KitchenTestCase {
 		}
 	}
 
+	protected static void openConnections(Map<String,String> JNDI_NAMES) throws NamingException, SQLException, DatabaseUnitException {
+		if(connections == null){
+			connections = new HashMap<String, IDatabaseConnection>();
+			
+			for(Map.Entry<String, String> entry : JNDI_NAMES.entrySet()){
+					String jndiname = entry.getKey();
+					String schema = entry.getValue();
+					String dbType = jndiname.contains(":") ? jndiname.split(":")[0].toUpperCase() : null;
+					jndiname = jndiname.contains(":") ? jndiname.split(":")[1] : jndiname;
+					
+					Connection conn = getJndiConnection(jndiname);
+					IDatabaseConnection databaseConnection = null;
+					
+					if ("MYSQL".equals(dbType)){
+						databaseConnection = new MySqlConnection(conn,schema);
+					} else {
+						databaseConnection = new DatabaseConnection(conn, schema);
+					}
+
+					connections.put(jndiname,databaseConnection );
+			} 
+		}
+	}	
 	public static void closeConnections() throws SQLException{
 		if(connections != null){
 		    Iterator<IDatabaseConnection> it = connections.values().iterator();

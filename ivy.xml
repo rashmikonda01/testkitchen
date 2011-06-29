@@ -42,7 +42,7 @@
 		<dependency org="mysql" name="mysql-connector-java" rev="5.0.7" conf="db->default" transitive="false"/> 
 		<dependency org="hsqldb" name="hsqldb" rev="1.8.0.7" conf="db->default"/>
 		<!--  DBDEPLOY -->
-		<dependency org="dbdeploy" name="dbdeploy-ant" rev="3.0M2" conf="dbdeploy->default"/>
+		<dependency org="dbdeploy" name="dbdeploy-ant" rev="3.0-TPN" conf="dbdeploy->default"/>
 
 	</dependencies>    
 </ivy-module>
